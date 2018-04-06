@@ -1,0 +1,14 @@
+Nom : Vue_cursus
+
+ SELECT t_inscription.id_etudiant,
+    t_etudiants.nom,
+    t_etudiants.prenom,
+    t_parcours.nom_parcours,
+    t_mention.nom_mention,
+    t_inscription.annee_u,
+    t_inscription.situation,
+    t_inscription.niveau
+   FROM t_inscription
+     JOIN t_etudiants ON t_inscription.id_etudiant = t_etudiants.id_etudiant
+     JOIN t_parcours ON t_inscription.id_parcours = t_parcours.id_parcours
+     JOIN t_mention ON t_mention.id_mention = t_parcours.id_mention;
